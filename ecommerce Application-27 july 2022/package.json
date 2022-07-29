@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-application-28-june-22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cloudinary": "^1.30.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "mongoose": "^6.4.1",
+    "nodemon": "^2.0.18",
+    "react-alice-carousel": "^2.6.4",
+    "slick-carousel": "^1.8.1"
+  }
+}
