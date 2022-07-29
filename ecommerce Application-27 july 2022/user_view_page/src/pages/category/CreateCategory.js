@@ -4,11 +4,11 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-import camera from "../Gallary/camera.png";
-import loading from "../Gallary/loading.gif";
-import loadding from "../Gallary/loading 2.gif";
+import camera from "../../Gallary/camera.png";
+import loading from "../../Gallary/loading.gif";
+import loadding from "../../Gallary/loading 2.gif";
 
-import { GlobalState } from "../globalState";
+import { GlobalState } from "../../globalState";
 import { CategoryItem } from "./CategoryItem";
 const initialValue = {
   title: "",

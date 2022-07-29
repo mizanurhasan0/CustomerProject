@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import loadding from "../Gallary/loadding2.gif";
-import { GlobalState } from "../globalState";
+import loadding from "../../Gallary/loadding2.gif";
+import { GlobalState } from "../../globalState";
 import axios from "axios";
 
 export const CategoryItem = ({ category, onViewAndDelete }) => {

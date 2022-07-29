@@ -60,16 +60,16 @@ export const Footer = () => {
                 </h3>
                 <div className="mt-4 space-y-4">
                   <a href="#!" className="text-base text-gray-500 block">
-                    Pricing
+                    facebook
                   </a>
                   <a href="#!" className="text-base text-gray-500 block">
-                    Documentation
+                    whatsapp
                   </a>
                   <a href="#!" className="text-base text-gray-500 block">
-                    Price
+                    imo
                   </a>
                   <a href="#!" className="text-base text-gray-500 block">
-                    Guides
+                    Viber
                   </a>
                 </div>
               </div>

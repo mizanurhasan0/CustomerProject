@@ -11,14 +11,14 @@ export const Navbar = () => {
   const [scrollValue, setScrollValue] = useState(true);
 
   useEffect(() => {
-    if (window.location.href == window.location.origin + "/") {
+    if (window.location.href === window.location.origin + "/") {
       setShowCategory(true);
     } else {
       setShowCategory(false);
     }
   }, []);
   const scrollingValue = () => {
-    if (window.location.href != window.location.origin) {
+    if (window.location.href !== window.location.origin + "/") {
       setScrollValue(true);
       setShowCategory(false);
       if (window.scrollY < 80) {
@@ -42,6 +42,12 @@ export const Navbar = () => {
     if (value === "home") {
       setShowCategory(true);
     } else if (value === "shop") {
+      setShowCategory(false);
+      setScrollValue(true);
+    } else if (value === "contact") {
+      setShowCategory(false);
+      setScrollValue(true);
+    } else if (value === "about") {
       setShowCategory(false);
       setScrollValue(true);
     }
@@ -137,10 +143,18 @@ export const Navbar = () => {
             >
               Shop
             </Link>
-            <Link to="/" className="text-gray-200 hover:text-white transition">
+            <Link
+              to="/about"
+              className="text-gray-200 hover:text-white transition"
+              onClick={() => UrlClickEven("about")}
+            >
               About
             </Link>
-            <Link to="/" className="text-gray-200 hover:text-white transition">
+            <Link
+              to="/contact"
+              className="text-gray-200 hover:text-white transition"
+              onClick={() => UrlClickEven("contact")}
+            >
               Contact
             </Link>
           </div>

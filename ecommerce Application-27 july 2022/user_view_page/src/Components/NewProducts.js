@@ -12,7 +12,7 @@ import bottle from "../Gallary/products/bottle.jpg";
 export const NewProduts = () => {
   return (
     <div className="bg-blue-50">
-      <div className="px-5 md:container pb-16 ">
+      <div className="px-6 md:container pb-16 ">
         <h2 className="text-2xl uppercase font-medium text-gray-500 mb-6 pt-4">
           Top new Arrival
         </h2>
@@ -73,7 +73,7 @@ export const NewProduts = () => {
                     </div>
                   </div>
                   <a
-                    href="#!"
+                    href="/details/2"
                     className="w-full block bg-primary text-white text-center mt-3 p-1 capitalize"
                   >
                     Add to cart

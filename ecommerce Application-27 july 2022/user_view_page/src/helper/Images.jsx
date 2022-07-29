@@ -9,8 +9,17 @@ import bottle from "../Gallary/products/bottle.jpg";
 import box1 from "../Gallary/products/box1.jpg";
 import brashHolder from "../Gallary/products/brashHolder.jpg";
 import catly from "../Gallary/products/catly.jpg";
+import ourValues from "../Gallary/ourValues.png";
+import contact from "../Gallary/contact.jpg";
+
+import email from "../Gallary/social logo/email.png";
+import location from "../Gallary/social logo/location.png";
+import phone from "../Gallary/social logo/phone.png";
 
 export {
+  phone,
+  location,
+  email,
   facebook,
   messanger,
   whatsapp,
@@ -22,4 +31,6 @@ export {
   box1,
   brashHolder,
   catly,
+  ourValues,
+  contact,
 };
