@@ -1,13 +1,28 @@
-import { faSearch, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faBagShopping,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext, useState } from "react";
+import { CartItem } from "../helper/CartItem";
+import { Link } from "react-router-dom";
+import { GlobalState } from "../globalState";
 
 export const Headers = () => {
+  const state = useContext(GlobalState);
+  const [reload, setReload] = state.reload;
+
+  const [cartActive, setCartActive] = useState(false);
+  const onActiveCart = () => {
+    setCartActive(!cartActive);
+    setReload(!reload);
+  };
   return (
-    <header className="shadow-md p-5">
+    <header className="shadow-md p-5 ">
       <div
         className="md:container flex 
-      justify-between items-center"
+      justify-between items-center "
       >
         <a
           href="#!"
@@ -56,7 +71,11 @@ export const Headers = () => {
           className="text-center md:flex ml-2
        "
         >
-          <a href="#!" className="relative group">
+          <button
+            onClick={onActiveCart}
+            className="relative group
+          "
+          >
             <span className="text-2xl group-hover:text-primary text-gray-500">
               <FontAwesomeIcon icon={faBagShopping} />
             </span>
@@ -68,7 +87,64 @@ export const Headers = () => {
             >
               8
             </span>
-          </a>
+          </button>
+          {/* SHopping bar */}
+          <div
+            className={`absolute bg-blue-100 pb-10  w-80 right-1 z-20 
+          top-28 ${cartActive ? " " : "hidden"}`}
+          >
+            <div className="relative bg-gray-100 p-5">
+              {" "}
+              <FontAwesomeIcon
+                icon={faClose}
+                className="absolute top-2 left-2
+                text-gray-600 cursor-pointer"
+                onClick={() => setCartActive(!cartActive)}
+              />
+              <h1 className="text-primary font-semibold tracking-widest">
+                Shopping cart
+              </h1>
+            </div>
+            <div className="">
+              <CartItem />
+              <CartItem />
+              <div>
+                <div
+                  className="flex flex-col mx-2
+               text-gray-600 border-t-2 border-primary mt-5
+               border-b-2 "
+                >
+                  <div className="flex justify-between mt-5">
+                    <p>Items</p>
+                    <span className="font-bold tracking-wider">৳ 1500</span>
+                  </div>
+                  <div className="flex justify-between mt-2">
+                    <p>Shipping</p>
+                    <span className="font-bold tracking-wider">৳ 60</span>
+                  </div>
+                  <div className="flex justify-between mt-2 mb-2">
+                    <p>Tax</p>
+                    <span className="font-bold tracking-wider">৳ 0</span>
+                  </div>
+                </div>
+                <div className="flex justify-between mt-2 mb-2 mx-2">
+                  <p className="text-semibold">TOTAL</p>
+                  <span className="font-bold tracking-wider">৳ 1560</span>
+                </div>
+                <Link
+                  to="/cart"
+                  className="bg-primary rounded-3xl
+                 text-white p-2 px-5 w-60 border-2 border-primary
+                 hover:bg-transparent hover:text-primary transform 
+                 transition-all duration-500 "
+                  onClick={() => onActiveCart()}
+                >
+                  Checkout
+                </Link>
+              </div>
+            </div>
+          </div>
+          {/* Shopping bar end */}
         </div>
       </div>
     </header>

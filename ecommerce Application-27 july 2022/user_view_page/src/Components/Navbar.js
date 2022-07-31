@@ -7,6 +7,7 @@ import { GlobalState } from "../globalState";
 export const Navbar = () => {
   const state = useContext(GlobalState);
   const [categories] = state.categories.categories;
+  const [reload] = state.reload;
   const [showCategory, setShowCategory] = useState(true);
   const [scrollValue, setScrollValue] = useState(true);
 
@@ -16,7 +17,7 @@ export const Navbar = () => {
     } else {
       setShowCategory(false);
     }
-  }, []);
+  }, [reload]);
   const scrollingValue = () => {
     if (window.location.href !== window.location.origin + "/") {
       setScrollValue(true);
@@ -41,13 +42,7 @@ export const Navbar = () => {
   const UrlClickEven = (value) => {
     if (value === "home") {
       setShowCategory(true);
-    } else if (value === "shop") {
-      setShowCategory(false);
-      setScrollValue(true);
-    } else if (value === "contact") {
-      setShowCategory(false);
-      setScrollValue(true);
-    } else if (value === "about") {
+    } else {
       setShowCategory(false);
       setScrollValue(true);
     }

@@ -6,14 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTh,
   faList,
-  faStar,
-  faHeart,
-  faSearch,
   faAngleDown,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { bag1, bag2, bottle, box1, brashHolder } from "../helper/Images";
 import { useState } from "react";
+import { ProductModel2 } from "../helper/ProductModel2";
 
 export const Shops = () => {
   const state = useContext(GlobalState);
@@ -31,9 +29,7 @@ export const Shops = () => {
   };
   return (
     <div className="px-5 md:container py-4">
-      {/*  */}
       <div className=" grid grid-cols-4 gap-6 pt-4 pb-16 items-start">
-        {/*  */}
         <div className="col-span-4 md:col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hidden">
           <div className="space-y-5 divide-y-5 divide-y divide-gray-200">
             <div>
@@ -181,7 +177,7 @@ export const Shops = () => {
             {/*  */}
           </div>
         </div>
-        {/*  */}
+
         <div className="col-span-4 md:col-span-3">
           <div className="flex ">
             <select
@@ -210,292 +206,14 @@ export const Shops = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 items-start mt-4 gap-4">
-            <div className="shadow group">
-              <div className="relative">
-                <img src={bag1} alt="" />
-                <div
-                  className="bg-black inset-0 absolute bg-opacity-40 flex 
-            items-center justify-center space-x-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                </div>
-              </div>
-              <div className="px-3 pt-3">
-                <h3 className="font-medium uppercase ">Pink Bag</h3>
-                <div className="flex items-center">
-                  <span className="font-medium  text-primary mr-4">৳ 500</span>
-                  <span className="text-gray-400 text-xs line-through">
-                    ৳ 900
-                  </span>
-                </div>
-                <div className="flex space-x-1 pt-2 pb-3 items-center">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <span className="text-sm text-gray-400 pl-3">(110)</span>
-                </div>
-              </div>
-              <button
-                className="bg-primary w-full rounded-b-sm p-1 text-white capitalize
-          "
-              >
-                Add to cart
-              </button>
-            </div>
-            <div className="shadow group">
-              <div className="relative">
-                <img src={bag2} alt="" />
-                <div
-                  className="bg-black inset-0 absolute bg-opacity-40 flex 
-            items-center justify-center space-x-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                </div>
-              </div>
-              <div className="px-3 pt-3">
-                <h3 className="font-medium uppercase ">Red bag</h3>
-                <div className="flex items-center">
-                  <span className="font-medium  text-primary mr-4">৳ 700</span>
-                  <span className="text-gray-400 text-xs line-through">
-                    ৳ 1000
-                  </span>
-                </div>
-                <div className="flex space-x-1 pt-2 pb-3 items-center">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <span className="text-sm text-gray-400 pl-3">(110)</span>
-                </div>
-              </div>
-              <button
-                className="bg-primary w-full rounded-b-sm p-1 text-white capitalize
-          "
-              >
-                Add to cart
-              </button>
-            </div>
-            <div className="shadow group">
-              <div className="relative">
-                <img src={bottle} alt="" />
-                <div
-                  className="bg-black inset-0 absolute bg-opacity-40 flex 
-            items-center justify-center space-x-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                </div>
-              </div>
-              <div className="px-3 pt-3">
-                <h3 className="font-medium uppercase ">Bottle</h3>
-                <div className="flex items-center">
-                  <span className="font-medium  text-primary mr-4">৳ 200</span>
-                  <span className="text-gray-400 text-xs line-through">
-                    ৳ 300
-                  </span>
-                </div>
-                <div className="flex space-x-1 pt-2 pb-3 items-center">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <span className="text-sm text-gray-400 pl-3">(110)</span>
-                </div>
-              </div>
-              <button
-                className="bg-primary w-full rounded-b-sm p-1 text-white capitalize
-          "
-              >
-                Add to cart
-              </button>
-            </div>
-            <div className="shadow group">
-              <div className="relative">
-                <img src={brashHolder} alt="" />
-                <div
-                  className="bg-black inset-0 absolute bg-opacity-40 flex 
-            items-center justify-center space-x-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                </div>
-              </div>
-              <div className="px-3 pt-3">
-                <h3 className="font-medium uppercase ">Brash holder</h3>
-                <div className="flex items-center">
-                  <span className="font-medium  text-primary mr-4">৳ 100</span>
-                  <span className="text-gray-400 text-xs line-through">
-                    ৳ 200
-                  </span>
-                </div>
-                <div className="flex space-x-1 pt-2 pb-3 items-center">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <span className="text-sm text-gray-400 pl-3">(110)</span>
-                </div>
-              </div>
-              <button
-                className="bg-primary w-full rounded-b-sm p-1 text-white capitalize
-          "
-              >
-                Add to cart
-              </button>
-            </div>
-            <div className="shadow group">
-              <div className="relative">
-                <img src={box1} alt="" />
-                <div
-                  className="bg-black inset-0 absolute bg-opacity-40 flex 
-            items-center justify-center space-x-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="text-white bg-primary rounded-full p-2 text-md"
-                  />
-                </div>
-              </div>
-              <div className="px-3 pt-3">
-                <h3 className="font-medium uppercase ">Seed Holder</h3>
-                <div className="flex items-center">
-                  <span className="font-medium  text-primary mr-4">৳ 250</span>
-                  <span className="text-gray-400 text-xs line-through">
-                    ৳ 500
-                  </span>
-                </div>
-                <div className="flex space-x-1 pt-2 pb-3 items-center">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className="text-sm text-yellow-400"
-                  />
-                  <span className="text-sm text-gray-400 pl-3">(110)</span>
-                </div>
-              </div>
-              <button
-                className="bg-primary w-full rounded-b-sm p-1 text-white capitalize
-          "
-              >
-                Add to cart
-              </button>
-            </div>
+            <ProductModel2 image={bag2} />
+            <ProductModel2 image={bottle} />
+            <ProductModel2 image={bag1} />
+            <ProductModel2 image={box1} />
+            <ProductModel2 image={brashHolder} />
           </div>
-          {/*  */}
         </div>
-        {/*  */}
       </div>
-      {/*  */}
     </div>
   );
 };

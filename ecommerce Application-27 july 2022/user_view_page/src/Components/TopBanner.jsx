@@ -1,6 +1,7 @@
 import React from "react";
 import { faUser, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export const TopBanner = () => {
   return (
@@ -38,8 +39,10 @@ export const TopBanner = () => {
             <span className="font-semibold">01926-191306</span>
           </div>
           <div className="cursor-pointer">
-            <FontAwesomeIcon icon={faUser} className="mx-1" />
-            <span className="hidden md:inline-block">Login/Register</span>
+            <Link to="/login">
+              <FontAwesomeIcon icon={faUser} className="mx-1" />
+              <span className="hidden md:inline-block">Login/Register</span>
+            </Link>
           </div>
         </div>
       </div>

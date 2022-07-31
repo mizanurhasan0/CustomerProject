@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   faBridge,
   faEnvelope,
+  faWalking,
   faHeart,
   faSearch,
   faShoppingBag,
   faStar,
+  faMoneyBill,
+  faTimes,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,13 +29,15 @@ import Slider from "react-slick";
 import settings_3 from "../helper/SliderSetting";
 
 export const ProductDetails = () => {
+  const [deliveryCharge, setDeliveryCharge] = useState("৳ 60");
+
   return (
     <div className=" py-16">
       {/*  */}
       <div className="container grid grid-cols-2 gap-6">
         <div className="col-span-2 md:col-span-1">
           <img src={balon} alt="" />
-          <div className="grid grid-cols-5 gap-2 ">
+          <div className="grid grid-cols-5 gap-2 xl:pb-5">
             <img
               src={balon}
               alt=""
@@ -98,7 +104,10 @@ export const ProductDetails = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
+          <div
+            className="flex gap-3 border-b
+           border-gray-200 pb-5 mt-6"
+          >
             <a
               href="#!"
               className="bg-primary border border-primary text-white px-8 
@@ -109,7 +118,7 @@ export const ProductDetails = () => {
             </a>
           </div>
           {/*  */}
-          <div className=" mt-4 text-center">
+          <div className=" text-center p-5">
             <div className="flex gap-5 items-center justify-center">
               <a
                 href="#!"
@@ -147,9 +156,91 @@ export const ProductDetails = () => {
               </p>
             </div>
           </div>
+          {/*  */}
         </div>
+
         {/*  */}
       </div>
+      {/*  */}
+      <div className="bg-blue-50 py-2">
+        <div className="mx-5 md:container">
+          <div className="flex justify-between">
+            <span className="text-gray-400">
+              Delivery charge {deliveryCharge}
+            </span>
+            <h1 className="text-primary  text-xl">Delivery</h1>
+          </div>
+          <div className="md:flex justify-between ">
+            <div
+              className="bg-white my-2 py-2 px-2 
+            space-y-2 w-full shadow-xl md:mr-2 rounded-md"
+            >
+              <div className="flex items-center ">
+                <input
+                  type="radio"
+                  id="cat-1"
+                  name="location"
+                  onChange={() => setDeliveryCharge("৳ 60")}
+                  className="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                />
+                <label
+                  htmlFor="cat-1"
+                  className="text-gray-500 ml-3 
+                    cursor-pointer text-sm xl:text-base
+                    uppercase"
+                >
+                  Inside Dhaka
+                </label>
+              </div>
+              <div className="flex items-center ">
+                <input
+                  type="radio"
+                  id="cat-2"
+                  name="location"
+                  onChange={() => setDeliveryCharge("৳ 120")}
+                  className="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                />
+                <label
+                  htmlFor="cat-2"
+                  className="text-gray-500 ml-3 
+                    cursor-pointer text-sm xl:text-base
+                    uppercase"
+                >
+                  Outside Dhaka
+                </label>
+              </div>
+            </div>
+            <div
+              className="flex items-center space-x-3
+             bg-white py-2 my-2 px-2 md:m-2
+             w-full shadow-xl rounded-md"
+            >
+              <FontAwesomeIcon
+                icon={faWalking}
+                className="text-primary text-xl"
+              />
+              <div>
+                <p className="text-gray-500">Standard Delivery</p>
+                <span className="text-gray-400 text-sm">2-4 day(s)</span>
+              </div>
+            </div>
+
+            <div
+              className="flex items-center space-x-3
+             bg-white py-2 my-2 px-2 md:ml-2 w-full shadow-xl
+             rounded-md"
+            >
+              <FontAwesomeIcon
+                icon={faMoneyBill}
+                className="text-primary text-xl"
+              />
+
+              <p className="text-gray-500">Cash on Delivery Available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*  */}
       <div className="container pt-10 ">
         <h3
           className="border-b border-gray-200 text-primary font-medium
